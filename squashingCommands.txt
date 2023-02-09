@@ -11,6 +11,11 @@ git stash list // List all the stash
 git stash // To goback in the last commit and It save the local changes which are not the part of staging area in draft to do it we dont have to commit. 
 git stash apply // To restore/goback to the draft content to top of the stash 
 git stash apply index // By this you can apply specified stash 
+git stash drop // Drop the Most Recent Stash
+it stash pop - The command restores the changes and schedules the stash for deletion.
+git stash drop stash@{n} // {n}, specify the index number of the stash you want to delete.
+git stash clear // Drop All Git Stashes
+git stash apply stash_hash // Restore Deleted Stash
 
 If we run  $ git stash //  and there is no changes in working directory other than the content till committed part it will show: 
 which No local changes to save
