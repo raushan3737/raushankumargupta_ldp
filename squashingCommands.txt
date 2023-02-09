@@ -5,5 +5,14 @@ Suppose we are working on the feature but if we want to go back to the last comm
 
 stash - Used to store (changes) safely in a hidden place
 
+
+Useful commands : 
+git stash list // List all the stash 
 git stash // To goback in the last commit and It save the local changes which are not the part of staging area in draft to do it we dont have to commit. 
-git stash apply // To restore/goback to the draft content 
+git stash apply // To restore/goback to the draft content to top of the stash 
+git stash apply index // By this you can apply specified stash 
+
+If we run  $ git stash //  and there is no changes in working directory other than the content till committed part it will show: 
+which No local changes to save
+
+git status -s // shows to the users which of the changes have been staged and which have not been staged.
