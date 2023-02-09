@@ -6,6 +6,7 @@ Suppose we are working on the feature but if we want to go back to the last comm
 stash - Used to store (changes) safely in a hidden place
 
 
+Resources: https://youtu.be/DeU6opFU_zw
 Useful commands : 
 git stash list // List all the stash 
 git stash // To goback in the last commit and It save the local changes which are not the part of staging area in draft to do it we dont have to commit. 
