@@ -1,0 +1,7 @@
+
+Squashing : Combining multiple commit in to one
+git branch -a // To show all branches 
+git branch branchNameofRemote // It will make a copy of that in local if if it is not in working directory & also tracking will on automatically.
+
+git rebase -i commitId // To squash multiple commit  in the branch 
+git merge --squash branchName // It will combine all the commit of branchName in to One commit & merge them in another branch where you  are  
