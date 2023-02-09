@@ -4,3 +4,6 @@ Squashing : The git stash command takes your uncommitted changes (both staged an
 Suppose we are working on the feature but if we want to go back to the last commit without loosing the work of feature branch & also we dont want to make
 
 stash - Used to store (changes) safely in a hidden place
+
+git stash // To goback in the last commit and It save the local changes which are not the part of staging area in draft to do it we dont have to commit. 
+git stash apply // To restore/goback to the draft content 
