@@ -6,6 +6,8 @@ git --version
 
 Basic Commands:
 ls // To show all files in working  directory
+ls -a // TO show all file & directory
+ls -R // To show all files & directory in details . 
 git ls-files // To show all files in Staging area
 git log // To show all commit in git local repo. 
 git init  // To inialise empty git repo 
@@ -29,6 +31,9 @@ git diff --staged filename // Diff b/w staged filename & working directory filen
 git restore --staged filename // To unstage the change
 git commit -m "message" // To commit with specified message
 git commit -a -m "message" // To commit with specified message which is already in Staging area
+
+Restoring files: 
+git restore --staged file // To restore the deleted file in Staging area 
 
 Removing files: 
 
