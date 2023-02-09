@@ -13,3 +13,9 @@ squash - combine one or more commit to previous commit
 drop - remove commit 
 
 git merge --squash branchName // It will combine all the commit of branchName in to One commit & merge them in another branch where you  are  
+
+
+git Log Stat // The log command displays the files that have been modified. It also shows the number of lines and a summary line of the total records that have been updated. The lines that have been added or removed
+
+
+git log --patch  // log with diff
