@@ -1,0 +1,193 @@
+What is git ? vcs
+central vs distributed vcs 
+
+git config --list : To show all the credential-details
+git --version
+git config --global user.name 'nam' 
+git config --global user.email 'youremailaddress' 
+
+https://linuxhint.com/change-git-remote-origin-url/#:~:text=To%20change%20a%20Git%20remote,to%20set%20the%20new%20origin.
+$ git remote set-url origin git@github.com:GitUser0422/demo3.git // Set remote 
+
+git help <verb> or git <verb> --help or git add --help
+
+Example: git help config : To get info about config verb
+
+To track the repo which is in the machine locally then, we have to inialise the git repo for it 
+
+Initialize a repo from existing code which is present locally in pc: 
+git init  
+
+then one file will be generated with .git extension which will keep all info related to the repo 
+
+To remove the git tracking: rm -rf .git
+
+Before first commit run: 
+git status : It will show the status of all file tracked untracked etc
+
+
+To change or make master as a default branch locally & remote use : 
+git init -b master
+
+Push the code to the remote in master branch : 
+
+git push -u origin master
+
+
+To ignore the files:
+touch .gitignore
+
+Add gitignore file
+.DS_Store
+.project
+*.pyc 
+
+
+
+Untracked file & Modified file will be in : working directory  it will list those whenever we run git status
+Staging Area: is where we organise what want to be commited to our repo
+
+
+Add files to the staging area:
+git add -A or git add  // To add all file which is untracked or modified 
+git status 
+
+Removes files from staging area: 
+
+git reset : To remove all files from staging area 
+Or git reset filename 
+git status
+
+
+Commit: 
+git commit -m "Initial Commit"  // m for messages
+git status // Will show nothing to commit, working directory clean 
+
+To see all commit : 
+git log : Will show all the info about commit & user details 
+
+
+Push local repo to github:
+Setting the remote repo & local repo 
+Step 1: Make a repo. on the github.com & copy the url of that repo.
+Step 2: Be present in cwd which you want to push to the github
+Step 3(Set the new remote): git remote add origin <REMOTE_URL>
+Example: git remote add origin https://github.com/raushan91026/gitTrial.git
+Step 4 (Verifies the new remote URL): git remote -v
+
+Final step:
+# Pushes the changes in your local repository up to the remote repository you specified as the origin
+git push -u origin main
+
+
+For Remote Project: 
+
+Clone repo: 
+git clone <url> <where to clone> 
+Example: git clone <url> . // . stands for cwd 
+
+Viewing info about the remote repo:
+git remote -v // (fetch) which is present locally 
+git branch -a // Show all branches of the repo for both remote & locally 
+
+
+Pushing changes commit changes like we did previously:
+git diff // Will shows all changes in codebase (- sign will indicate remove & + sign indicates add )
+git status
+git add -A
+git commit -m "Message" 
+
+Then push: 
+git pull origin master // This will pull all the code from remote repo & sync with repo which is present locally Always pull before push to get up to date with repo 
+git push origin master // pushing all the changes to the master branch 
+
+
+
+Do I need to branch Git? Why do we need a Branch in Git and Why Branches Are Important?
+Git branches come to the rescue at many different places during the development of a project. As mentioned above,
+branches create another line of development that is entirely different or isolated from the main stable master branch.
+
+What is the purpose of branching and merging?
+Branching and merging enables multiple users to work on the same model at the same time.
+To do this, the project owner creates a branch of the root project, which is a copy of the project. 
+A team member can modify the branch as required, independently of the root project.
+
+
+Common workflow:
+Create a branch for desired features:
+git branch branchname // To create branch 
+git branch // Show all branches 
+git checkout branchname // To start working on this branch 
+
+// Make some changes & commit 
+
+Note: When we working in the newly created branch & make changes & commit this will reflected only
+in local repo not in the remote repo or master branch. 
+
+After committing in to the newly created branch 
+Push branch to remote: 
+git push -u origin branchname // origin : name of our remote repo 
+git branch -a // To show all branches (Red text will show remote branch & rest will show local presented branch)
+
+
+Merge a branch : 
+Rename a Git branch: “git branch -m old-name new-name”.
+git checkout master
+git pull origin master
+git branch --merged // Show branches that was merged so far . 
+git merge name //To merge the branch ,  name will be the branch which we will merge in to the master
+git push origin master 
+
+
+To delete a branch : 
+
+git branch --merged
+git branch -d branchName // To delete the branch this will delete locally 
+git branch -a
+git push origin --delete branchName // Important: We have to run this command to delete the branch from remote also 
+
+
+To change the name of the branch : 
+Make sure you are in that branch whose name want to change: git branch -m new-branch-name
+
+
+
+
+Basic commands: 
+git add
+git commit
+git commit -m "My lazy short commit message"
+git log
+git log -n 5
+git log --oneline
+git log --oneline --graph
+git restore --staged
+
+Aliases
+You can set up aliases as such: git config --global alias.lol 'log --oneline --graph --all' This might be useful to you.
+
+
+git restore filename // To restore changes 
+echo "message no need of quote" > filenamewithExtension 
+
+Use git log --oneline --graph to see your branch pointing to the new commit.
+
+List files in branch with git ls-files
+Try git ls-files described in the git-scm docu:
+# Switch to <branch> of interest
+$ git checkout <branch>
+# List all files in <branch>
+$ git ls-files
+
+
+git checkout -b branchName // To create new branch & switch in to it 
+
+Applicable for tracked files 
+git commit -a -m "Message" // To commit the files in local git repo which are already in staging area. No need to add repetedly after modification
+
+
+git rebase -i HEAD~N // First use "git reflog" command to ensure at which commit you want squash Here, by running this command this will open the editor 
+where we see last N commits & we can squash by putting "s" insted of "pick" & then save it it will again open editor to enter commit message which will
+replace all commit starting by s with this commit message & it will reflect in git status of that branch.   
+
+
